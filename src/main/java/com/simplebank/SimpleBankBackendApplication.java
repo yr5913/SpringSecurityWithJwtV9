@@ -1,13 +1,13 @@
-package com.healthpro.springsecuritylearnerV2;
+package com.simplebank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringSecurityBasicApplication {
+public class SimpleBankBackendApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringSecurityBasicApplication.class, args);
+        SpringApplication.run(SimpleBankBackendApplication.class, args);
     }
 
 }

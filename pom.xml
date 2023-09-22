@@ -8,7 +8,7 @@
 		<version>3.1.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.healthpro</groupId>
+	<groupId>com.simplebank</groupId>
 	<artifactId>springsecurityV2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springsecurityV2</name>

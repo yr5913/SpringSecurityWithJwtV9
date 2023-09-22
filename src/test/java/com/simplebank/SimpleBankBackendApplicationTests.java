@@ -1,10 +1,10 @@
-package com.healthpro.springsecuritylearnerV2;
+package com.simplebank;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringsecuritybasicApplicationTests {
+class SimpleBankBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
