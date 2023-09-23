@@ -42,7 +42,12 @@ V1(deprecated) -- "This currently has very basic security using the default user
 password(can be seen in
 the application logs)"
 
-V2(current version) -- "This application now uses the username and password configured in applicaiton.properties file"
+V2(deprecated) -- "This application now uses the username and password configured in applicaiton.properties file"
+
+V3(deprecated)  -- "Using In memory data manager, check the SecurityConfig.java for more details "
+
+V4(current) -- "Using JDBC data manager by creating tables according to spring schema, check the SecurityConfig.java and
+resources/sql/schema_data.sql for more details "
 
 ## API Endpoints
 
