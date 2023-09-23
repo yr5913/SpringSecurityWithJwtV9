@@ -58,7 +58,7 @@ V4(deprecated) -- "Using custom data manager by creating custom tables and also 
 passwords before storing them to database, check the SecurityConfig.java and
 resources/sql/customer.sql and SimpleBankUserDetails.java for more details "
 
-V5(current) -- "Using custom Authentication Provider"
+V5(current) -- "Using custom Authentication Provider. Please check SimpleBankAuthenticationProvider"
 
 ## API Endpoints
 
