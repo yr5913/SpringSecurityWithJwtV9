@@ -51,12 +51,14 @@ SecurityConfig.java
 and
 resources/sql/schema_data.sql for more details "
 
-V3-3(current) -- "Using custom data manager by creating custom tables, check the SecurityConfig.java and
+V3-3(deprecated) -- "Using custom data manager by creating custom tables, check the SecurityConfig.java and
 resources/sql/customer.sql and SimpleBankUserDetails.java for more details "
 
-V4(current) -- "Using custom data manager by creating custom tables and also added Bcryptpassword encoder for hashing
+V4(deprecated) -- "Using custom data manager by creating custom tables and also added Bcryptpassword encoder for hashing
 passwords before storing them to database, check the SecurityConfig.java and
 resources/sql/customer.sql and SimpleBankUserDetails.java for more details "
+
+V5(current) -- "Using custom Authentication Provider"
 
 ## API Endpoints
 
