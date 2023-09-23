@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.simplebank</groupId>
-    <artifactId>springsecurityV3</artifactId>
+    <artifactId>SpringSecurityWithPasswordEncoderV4</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springsecurityV3</name>
     <description>Demo project for Spring Boot Security</description>
