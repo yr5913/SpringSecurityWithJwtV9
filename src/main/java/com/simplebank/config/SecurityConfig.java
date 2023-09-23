@@ -74,10 +74,10 @@ public class SecurityConfig {
 //    }
 
 
-    @Bean
-    public UserDetailsService userDetailsManager(DataSource dataSource) {
-        return new JdbcUserDetailsManager(dataSource);
-    }
+//    @Bean
+//    public UserDetailsService userDetailsManager(DataSource dataSource) {
+//        return new JdbcUserDetailsManager(dataSource);
+//    }
 
     /**
      * NoOpPasswordEncoder is for only non-prod

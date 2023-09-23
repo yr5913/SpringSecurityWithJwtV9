@@ -46,8 +46,12 @@ V2(deprecated) -- "This application now uses the username and password configure
 
 V3(deprecated)  -- "Using In memory data manager, check the SecurityConfig.java for more details "
 
-V4(current) -- "Using JDBC data manager by creating tables according to spring schema, check the SecurityConfig.java and
+V4(deprecated) -- "Using JDBC data manager by creating tables according to spring schema, check the SecurityConfig.java
+and
 resources/sql/schema_data.sql for more details "
+
+V5(current) -- "Using custom data manager by creating custom tables, check the SecurityConfig.java and
+resources/sql/customer.sql and SimpleBankUserDetails.java for more details "
 
 ## API Endpoints
 
