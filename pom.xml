@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.simplebank</groupId>
-    <artifactId>SpringSecurityCustomAuthenticationProviderV5</artifactId>
+    <artifactId>SpringSecurityWithCORSAndCSRFV6</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SpringSecurityCustomAuthenticationProviderV5</name>
+    <name>SpringSecurityWithCORSAndCSRFV6</name>
     <description>Demo project for Spring Boot Security</description>
     <properties>
         <java.version>17</java.version>
