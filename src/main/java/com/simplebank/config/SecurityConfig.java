@@ -4,13 +4,10 @@ package com.simplebank.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-
-import javax.sql.DataSource;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -31,17 +28,17 @@ public class SecurityConfig {
          */
 //        http.authorizeHttpRequests
 //        (request -> request.anyRequest().permitAll())
-//                .formLogin(Customizer.withDefaults())
-//                .httpBasic(Customizer.withDefaults());
+//                .formLogin(withDefaults())
+//                .httpBasic(withDefaults());
 
         /*
          Configuration with proper authentication
          */
         http.authorizeHttpRequests((requests) -> requests.requestMatchers("/account/**", "/cards/**", "/loans/**", "/balance/**").authenticated()
-                        .requestMatchers("/contact/**", "/notices/**", "/test/**").permitAll())
+                        .requestMatchers("/contact/**", "/notices/**", "/test/**", "/customer/register").permitAll())
                 .formLogin(withDefaults())
-                .httpBasic(withDefaults());
-        return http.build();
+                .httpBasic(withDefaults()).csrf(AbstractHttpConfigurer::disable);
+       return http.build();
     }
 
 //    @Bean
