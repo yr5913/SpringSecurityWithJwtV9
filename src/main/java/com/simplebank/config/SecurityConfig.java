@@ -34,10 +34,14 @@ public class SecurityConfig {
          */
         http.authorizeHttpRequests((requests) ->
                         requests
-                                .requestMatchers("/account/get").hasAuthority("VIEWACCOUNT")
-                                .requestMatchers("/loans/get").hasAuthority("VIEWLOANS")
-                                .requestMatchers("/balance/get").hasAnyAuthority("VIEWACCOUNT","VIEWBALANCE")
-                                .requestMatchers("/cards/get").hasAuthority("VIEWCARDS")
+//                                .requestMatchers("/account/get").hasAuthority("VIEWACCOUNT")
+//                                .requestMatchers("/loans/get").hasAuthority("VIEWLOANS")
+//                                .requestMatchers("/balance/get").hasAnyAuthority("VIEWACCOUNT","VIEWBALANCE")
+//                                .requestMatchers("/cards/get").hasAuthority("VIEWCARDS")
+                                .requestMatchers("/account/get").hasRole("USER")
+                                .requestMatchers("/loans/get").hasRole("USER")
+                                .requestMatchers("/balance/get").hasAnyRole("ADMIN", "USER")
+                                .requestMatchers("/cards/get").hasRole("USER")
                                 .requestMatchers("/customer/login").authenticated()
                                 .requestMatchers("/contact/**", "/notices/**", "/test/**", "/customer/register").permitAll())
                 .formLogin(withDefaults())

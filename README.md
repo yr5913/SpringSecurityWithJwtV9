@@ -65,9 +65,13 @@ V6(deprecated) -- "Using custom Authentication Provider and also implemented COR
 Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF"
 
 
-V7(current) -- "Using custom Authentication Provider and also implemented CORS and CSRF.
+V7(deprecated) -- "Using custom Authentication Provider and also implemented CORS and CSRF.
 Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF
 Added Authorities, Please check SecurityConfig.java for authorities"
+
+V7-2(current) -- "Using custom Authentication Provider and also implemented CORS and CSRF.
+Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF
+Added roles(removed authorities), Please check SecurityConfig.java for authorities(removed) and roles"
 
 
 ## API Endpoints
