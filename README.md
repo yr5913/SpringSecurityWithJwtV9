@@ -62,7 +62,7 @@ V5(deprecated) -- "Using custom Authentication Provider. Please check SimpleBank
 
 
 V6(current) -- "Using custom Authentication Provider and also implemented CORS and CSRF. 
-Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS"
+Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF"
 
 ## API Endpoints
 
