@@ -67,7 +67,8 @@ Please check SimpleBankAuthenticationProvider for authentication provider and Se
 
 V7(current) -- "Using custom Authentication Provider and also implemented CORS and CSRF.
 Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF
-Added Authorities and Roles, Please check SecurityConfig.java for authorities and roles"
+Added Authorities, Please check SecurityConfig.java for authorities"
+
 
 ## API Endpoints
 
