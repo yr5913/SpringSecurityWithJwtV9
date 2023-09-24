@@ -34,7 +34,7 @@ public class SecurityConfig {
         /*
          Configuration with proper authentication
          */
-        http.authorizeHttpRequests((requests) -> requests.requestMatchers("/account/**", "/cards/**", "/loans/**", "/balance/**").authenticated()
+        http.authorizeHttpRequests((requests) -> requests.requestMatchers("/account/**", "/cards/**", "/loans/**", "/balance/**", "/customer/login").authenticated()
                         .requestMatchers("/contact/**", "/notices/**", "/test/**", "/customer/register").permitAll())
                 .formLogin(withDefaults())
                 .httpBasic(withDefaults()).csrf(AbstractHttpConfigurer::disable);

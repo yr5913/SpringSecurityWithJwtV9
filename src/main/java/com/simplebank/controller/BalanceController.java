@@ -1,16 +1,25 @@
 package com.simplebank.controller;
 
 
+import com.simplebank.entity.AccountTransactions;
+import com.simplebank.repository.AccountTransactionsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/balance/")
-public class BalanceController {
+import java.util.List;
 
-    @GetMapping("getDetails")
-    public String getAccountDetails() {
-        return "Balance";
+@RestController
+@RequestMapping("/balance")
+public class BalanceController {
+    @Autowired
+    private AccountTransactionsRepository accountTransactionsRepository;
+
+    @GetMapping("/get")
+    public List<AccountTransactions> getBalanceDetails(@RequestParam int id) {
+        return accountTransactionsRepository.
+                findByCustomerIdOrderByTransactionDtDesc(id);
     }
 }
