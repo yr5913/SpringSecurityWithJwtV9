@@ -61,8 +61,13 @@ resources/sql/customer.sql and SimpleBankUserDetails.java for more details "
 V5(deprecated) -- "Using custom Authentication Provider. Please check SimpleBankAuthenticationProvider"
 
 
-V6(current) -- "Using custom Authentication Provider and also implemented CORS and CSRF. 
+V6(deprecated) -- "Using custom Authentication Provider and also implemented CORS and CSRF. 
 Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF"
+
+
+V7(current) -- "Using custom Authentication Provider and also implemented CORS and CSRF.
+Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF
+Added Authorities and Roles, Please check SecurityConfig.java for authorities and roles"
 
 ## API Endpoints
 

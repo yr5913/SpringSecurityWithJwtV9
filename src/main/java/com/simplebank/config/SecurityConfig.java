@@ -32,8 +32,14 @@ public class SecurityConfig {
         /*
          Configuration with proper authentication and added CORS
          */
-        http.authorizeHttpRequests((requests) -> requests.requestMatchers("/account/**", "/cards/**", "/loans/**", "/balance/**", "/customer/login").authenticated()
-                        .requestMatchers("/contact/**", "/notices/**", "/test/**", "/customer/register").permitAll())
+        http.authorizeHttpRequests((requests) ->
+                        requests
+                                .requestMatchers("/account/get").hasAuthority("VIEWACCOUNT")
+                                .requestMatchers("/loans/get").hasAuthority("VIEWLOANS")
+                                .requestMatchers("/balance/get").hasAnyAuthority("VIEWACCOUNT","VIEWBALANCE")
+                                .requestMatchers("/cards/get").hasAuthority("VIEWCARDS")
+                                .requestMatchers("/customer/login").authenticated()
+                                .requestMatchers("/contact/**", "/notices/**", "/test/**", "/customer/register").permitAll())
                 .formLogin(withDefaults())
                 .httpBasic(withDefaults())
                 // session management for UI
