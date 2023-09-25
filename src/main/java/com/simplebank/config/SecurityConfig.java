@@ -1,6 +1,8 @@
 package com.simplebank.config;
 
 
+import com.simplebank.filter.AuthoritiesLoggingAfterFilter;
+import com.simplebank.filter.AuthoritiesLoggingAtFilter;
 import com.simplebank.filter.CsrfCookieFilter;
 import com.simplebank.filter.RequestValidationBeforeFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -71,7 +73,9 @@ public class SecurityConfig {
                         return corsConfiguration;
                     }
                 }))
-                .addFilterBefore(new RequestValidationBeforeFilter(), BasicAuthenticationFilter.class);
+                .addFilterBefore(new RequestValidationBeforeFilter(), BasicAuthenticationFilter.class)
+                .addFilterAfter(new AuthoritiesLoggingAfterFilter(), BasicAuthenticationFilter.class)
+                .addFilterAt(new AuthoritiesLoggingAtFilter(), BasicAuthenticationFilter.class);
         return http.build();
     }
 
