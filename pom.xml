@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.simplebank</groupId>
-    <artifactId>SpringSecurityWithCustomFiltersV8</artifactId>
+    <artifactId>SpringSecurityWithJWTV9</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SpringSecurityWithCustomFiltersV8</name>
+    <name>SpringSecurityWithJWTV9</name>
     <description>Demo project for Spring Boot Security</description>
     <properties>
         <java.version>17</java.version>
@@ -53,6 +53,23 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.11.5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.11.5</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.11.5</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

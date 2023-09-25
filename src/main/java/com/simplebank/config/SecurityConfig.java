@@ -1,10 +1,7 @@
 package com.simplebank.config;
 
 
-import com.simplebank.filter.AuthoritiesLoggingAfterFilter;
-import com.simplebank.filter.AuthoritiesLoggingAtFilter;
-import com.simplebank.filter.CsrfCookieFilter;
-import com.simplebank.filter.RequestValidationBeforeFilter;
+import com.simplebank.filter.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,7 +32,16 @@ public class SecurityConfig {
         /*
          Configuration with proper authentication and added CORS
          */
-        http.authorizeHttpRequests((requests) ->
+        http
+                // session management for UI
+//                .securityContext(httpSecuritySecurityContextConfigurer ->
+//                        httpSecuritySecurityContextConfigurer.requireExplicitSave(false))
+//                .sessionManagement(httpSecuritySessionManagementConfigurer ->
+//                        httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
+                .sessionManagement(httpSecuritySessionManagementConfigurer ->
+                        httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
+                .authorizeHttpRequests((requests) ->
                         requests
 //                                .requestMatchers("/account/get").hasAuthority("VIEWACCOUNT")
 //                                .requestMatchers("/loans/get").hasAuthority("VIEWLOANS")
@@ -49,11 +55,6 @@ public class SecurityConfig {
                                 .requestMatchers("/contact/**", "/notices/**", "/test/**", "/customer/register").permitAll())
                 .formLogin(withDefaults())
                 .httpBasic(withDefaults())
-                // session management for UI
-                .securityContext(httpSecuritySecurityContextConfigurer ->
-                        httpSecuritySecurityContextConfigurer.requireExplicitSave(false))
-                .sessionManagement(httpSecuritySessionManagementConfigurer ->
-                        httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
                 // CSRF config
                 .csrf(httpSecurityCsrfConfigurer ->
                         httpSecurityCsrfConfigurer.ignoringRequestMatchers("/contact", "/customer/register")
@@ -69,11 +70,13 @@ public class SecurityConfig {
                         corsConfiguration.setAllowedMethods(List.of("*"));
                         corsConfiguration.setAllowCredentials(true);
                         corsConfiguration.setAllowedHeaders(List.of("*"));
+                        corsConfiguration.setExposedHeaders(List.of("Authorization"));
                         corsConfiguration.setMaxAge(3600L);
                         return corsConfiguration;
                     }
                 }))
                 // filters config
+                .addFilterAfter(new JWTTokenGeneratorFilter(), BasicAuthenticationFilter.class)
                 .addFilterBefore(new RequestValidationBeforeFilter(), BasicAuthenticationFilter.class)
                 .addFilterAfter(new AuthoritiesLoggingAfterFilter(), BasicAuthenticationFilter.class)
                 .addFilterAt(new AuthoritiesLoggingAtFilter(), BasicAuthenticationFilter.class);
