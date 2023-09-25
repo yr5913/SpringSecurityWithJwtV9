@@ -71,11 +71,19 @@ V7-2(deprecated) -- "Using custom Authentication Provider and also implemented C
 Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF
 Added roles(removed authorities), Please check SecurityConfig.java for authorities(removed) and roles"
 
-V8(current) -- "Using custom Authentication Provider and also implemented CORS and CSRF.
+V8(deprecated) -- "Using custom Authentication Provider and also implemented CORS and CSRF.
 Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF
 Added roles(removed authorities), Please check SecurityConfig.java for authorities(removed) and roles
 Added custom filters for logging after authentication, validation before authentication, Please check package filter and
 SecurityConfig.java for better understanding"
+
+V9(current) -- "Using custom Authentication Provider and also implemented CORS and CSRF.
+Please check SimpleBankAuthenticationProvider for authentication provider and SecurityConfig.java for CORS and CSRF
+Added roles(removed authorities), Please check SecurityConfig.java for authorities(removed) and roles
+Added custom filters for logging after authentication, validation before authentication, Please check package filter and
+SecurityConfig.java for better understanding
+Removed JSESSION and addded JWT token generation instead. Please check filter package and SecurityConfig for more
+details"
 
 ## API Endpoints
 
