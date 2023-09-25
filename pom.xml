@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.simplebank</groupId>
-    <artifactId>SpringSecurityWithAuthoritiesAndRolesV7</artifactId>
+    <artifactId>SpringSecurityWithCustomFiltersV8</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SpringSecurityWithAuthoritiesAndRolesV7</name>
+    <name>SpringSecurityWithCustomFiltersV8</name>
     <description>Demo project for Spring Boot Security</description>
     <properties>
         <java.version>17</java.version>
