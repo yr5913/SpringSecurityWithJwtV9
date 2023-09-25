@@ -2,6 +2,7 @@ package com.simplebank.config;
 
 
 import com.simplebank.filter.CsrfCookieFilter;
+import com.simplebank.filter.RequestValidationBeforeFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -69,7 +70,8 @@ public class SecurityConfig {
                         corsConfiguration.setMaxAge(3600L);
                         return corsConfiguration;
                     }
-                }));
+                }))
+                .addFilterBefore(new RequestValidationBeforeFilter(), BasicAuthenticationFilter.class);
         return http.build();
     }
 
